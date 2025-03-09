@@ -132,13 +132,13 @@ class TelegramUploader:
 
     async def _prepare_file(self, file_, dirpath):
         if self._lprefix:
-            cap_mono = f"💾 𝗙𝗶𝗹𝗲 ➤ {self._lprefix} <b>{file_}</b>\n       <b>Uploaded Successfully ✅</b>\n\n🚀 𝗣𝗼𝗐𝗲𝗋𝗲𝗱 𝗕𝘆 ➤ ๏ ๏ ʟᴜᴍɪɴᴏ ⇗ ˣᵖ \n\n🌍 <b>Explore More</b> ➤ <b>@luminoxpp</b>\n\n❓ <b>Facing issues? DM me for support</b>❗️"
+            cap_mono = f"💾 <b>File Uploaded!</b> ✅\n {self._lprefix} 🎉 Your file <b>{file_}</b> is ready!\n🚀 <b>Fast & Secure Uploads – Powered by</b> ๏ ʟᴜᴍɪɴᴏ ⇗ ˣᵖ\n🔗 <i>Discover More Cool Features!</i>\n👉 <b>@luminoxpp</b>\n🛠 <b>Need Help?</b> DM me now! 💬"
             self._lprefix = re_sub("<.*?>", "", self._lprefix)
             new_path = ospath.join(dirpath, f"{self._lprefix} {file_}")
             await rename(self._up_path, new_path)
             self._up_path = new_path
         else:
-            cap_mono = f"💾 𝗙𝗶𝗹𝗲 ➤ <b>{file_}</b>\n       <b>Uploaded Successfully ✅</b>\n\n🚀 𝗣𝗼𝗐𝗲𝗋𝗲𝗱 𝗕𝘆 ➤ ๏ ʟᴜᴍɪɴᴏ ⇗ ˣᵖ \n\n🌍 <b>Explore More</b> ➤ <b>@luminoxpp</b>\n\n❓ <b>Facing issues? DM me for support</b>❗️"
+            cap_mono = f"💾 <b>File Uploaded!</b> ✅\n🎉 Your file <b>{file_}</b> is ready!\n🚀 <b>Fast & Secure Uploads – Powered by</b> ๏ ʟᴜᴍɪɴᴏ ⇗ ˣᵖ\n🔗 <i>Discover More Cool Features!</i>\n👉 <b>@luminoxpp</b>\n🛠 <b>Need Help?</b> DM me now! 💬"
         if len(file_) > 60:
             if is_archive(file_):
                 name = get_base_name(file_)
